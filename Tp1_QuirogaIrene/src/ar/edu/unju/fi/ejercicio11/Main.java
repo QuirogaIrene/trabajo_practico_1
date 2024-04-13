@@ -1,8 +1,9 @@
 package ar.edu.unju.fi.ejercicio11;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
+		//Ejercicio numero 11.
 		
 		 	int i = 2;
 	        int j = 40;
