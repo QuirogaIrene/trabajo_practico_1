@@ -1,6 +1,6 @@
 package ar.edu.unju.fi.ejercicio5;
 
-import java.util.Iterator;
+
 import java.util.Scanner;
 
 public class Main {
