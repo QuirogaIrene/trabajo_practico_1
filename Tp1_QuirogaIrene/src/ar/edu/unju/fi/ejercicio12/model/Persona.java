@@ -9,7 +9,7 @@ public class Persona {
 	
 	public Persona() {
 	}
-
+	//creamos el constructor persona
 	public Persona(String nombrePersona, Calendar fechaNacimiento) {
 		this.nombrePersona = nombrePersona;
 		this.fechaNacimiento = fechaNacimiento;
@@ -30,7 +30,7 @@ public class Persona {
 	public void setFechaNacimiento(Calendar fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
+	//metodo para calcular la edad de la persona
 	public int edadPersona() {
 		int edad=0;
 		Calendar hoy= Calendar.getInstance();
@@ -41,12 +41,13 @@ public class Persona {
 		
 		return edad;
 	}
-	
+	//metodo para calcular el signo zodiacal de la persona
 	public String signoZodiaco() {
 		String signo;
 		int mes=fechaNacimiento.get(Calendar.MONTH)+1;
 		switch (mes) {
 		case 1:
+			//aqui preguntamos si el dia del mes de la fecha ingresada es menor o igual a 20 para asignarle un signo.
 			if(fechaNacimiento.get(Calendar.DAY_OF_MONTH)<= 20) {
 				signo="Capricornio";
 			}else
@@ -126,11 +127,14 @@ public class Persona {
 		} 
 		return signo;
 	}
+	
+	//metodo para calcula la estacion del año en el que nacio la persona
 	public String estacion() {
 	    int mes = fechaNacimiento.get(Calendar.MONTH) + 1;
 	    String estacion;
 	    switch ((mes) / 4) {
 	        case 0:
+	        	//aqui preguntamos si el dia del mes de la fecha ingresada es menor o igual a 20 para asignarle una estacion. 
 	        	if(fechaNacimiento.get(Calendar.DAY_OF_MONTH)<= 20) {
 	        		estacion = "Verano";
 	        	}else
@@ -161,9 +165,13 @@ public class Persona {
 	    return estacion;
 	}
 
+	//metodo para mostrar los resultados por consola.
 	public void setMostrarDatos() {
+		
+		//cambiamos el formato para poder tener una mejor lectura de la fecha de nacimiento.
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		System.out.println("Nombre: "+this.nombrePersona);
+		//aqui llamamos al sdf de tipo simpledateformat para poder visualizarlo por consola.
 		System.out.println("Fecha de Nacimiento: " + sdf.format(fechaNacimiento.getTime()));
 		System.out.println("Edad: "+edadPersona());
 		System.out.println("Signo Zodiacal: "+signoZodiaco());
